@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +14,9 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('azure')->redirect();
-});
-
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('azure')->user();
-
-    dd($user);
-});
+Route::get('/auth/redirect', [App\Http\Controllers\Auth\AuthController::class, 'redirect'])->name('login');
+Route::get('/auth/callback', [App\Http\Controllers\Auth\AuthController::class, 'callback']);
+Route::post('/auth/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
     return view('welcome');
