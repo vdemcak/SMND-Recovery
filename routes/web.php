@@ -19,5 +19,10 @@ Route::get('/auth/callback', [App\Http\Controllers\Auth\AuthController::class, '
 Route::post('/auth/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.home');
+})->name('home');
+
+Route::get('/portal', function () {
+    return view('pages.portal');
+})->name('portal');
+
