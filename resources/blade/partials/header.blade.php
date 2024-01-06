@@ -7,9 +7,9 @@
         <div class="flex gap-x-5">
             <div class="flex items-center gap-x-2">
                 <img src="{{ auth()->user()->photo }}" alt="photo" class="w-10 h-10 rounded-full border border-gray-400">
-                <div class="flex flex-col">
-                    <span class="leading-tight font-semibold text-smnd-blue">{{ auth()->user()->name }}</span>
-                    <span class="text-gray-500 text-sm">{{ auth()->user()->email }}</span>
+                <div class="flex flex-col gap-y-0.5">
+                    <span class="leading-none font-semibold text-smnd-blue">{{ auth()->user()->name }}</span>
+                    <span class="text-gray-500 leading-none text-sm">{{ auth()->user()->email }}</span>
                 </div>
             </div>
 
