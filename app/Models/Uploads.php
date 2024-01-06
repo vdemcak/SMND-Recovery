@@ -29,8 +29,4 @@ class Uploads extends Model
     protected $hidden = [
         'user_ip',
     ];
-
-    protected $casts = [
-        'files' => 'array',
-    ];
 }
