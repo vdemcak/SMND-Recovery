@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Uploads model
+ * Materials model
  *
  * @mixin Builder
  */
-class Uploads extends Model
+class Materials extends Model
 {
     use HasFactory;
 
-    protected $table = 'uploads';
+    protected $table = 'materials';
 
     protected $fillable = [
         'name',
