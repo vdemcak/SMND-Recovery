@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Models\Materials;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/auth/redirect', [App\Http\Controllers\Auth\AuthController::class, 'redirect'])->name('login');
-Route::get('/auth/callback', [App\Http\Controllers\Auth\AuthController::class, 'callback']);
-Route::post('/auth/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])->name('login');
+Route::get('/auth/callback', [AuthController::class, 'callback']);
+Route::post('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/portal', function () {
     return view('pages.portal', [
