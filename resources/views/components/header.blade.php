@@ -1,8 +1,8 @@
 <header class="py-2 flex items-center px-5 border-b-2 border-b-gray-200 justify-between">
-    <div class="flex items-center gap-x-2">
+    <a href="{{ route('home') }}" class="flex items-center gap-x-2">
         <img class="h-10" src="/images/smnd-logo.svg" alt="SMND Logo">
         <span class="text-xl font-bold">Portál obnovy materiálov</span>
-    </div>
+    </a>
     @auth
         <div class="flex gap-x-5">
             <div class="flex items-center gap-x-2">
