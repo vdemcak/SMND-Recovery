@@ -7,6 +7,8 @@
     @yield('head')
 
     @vite('resources/css/app.css')
+
+    @livewireScripts
 </head>
 @yield('body')
 

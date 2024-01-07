@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-    <div class="flex flex-col max-w-3xl mx-auto w-full items-center">
-        <h1 class="text-4xl font-bold">Odovzdané materiály</h1>
-        <p class="mt-2 text-center leading-6 text-gray-600 w-4/5">
+    <div class="mx-auto flex w-full max-w-3xl flex-col items-center">
+        <h1 class="w-full text-center text-4xl font-bold">Odovzdané materiály</h1>
+        <p class="mt-2 w-full text-center leading-6 text-gray-600 md:w-4/5">
             Momentálne sa v databáze nachádza <span class="font-bold">{{ $material_count }}</span>
             materiálov a cez <span class="font-bold">{{ $file_count }}</span> súborov. Nižšie nájdete všetky materiály
             a súbory, ktoré boli k ním priložené.

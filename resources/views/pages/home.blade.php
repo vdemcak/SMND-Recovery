@@ -7,24 +7,24 @@
 @stop
 
 @section('content')
-    <div class="flex flex-col max-w-3xl mx-auto w-full items-center">
-        <h1 class="text-4xl font-bold">Obnova edukačných materiálov</h1>
-        <p class="mt-2 text-center leading-6 text-gray-600 w-4/5">
+    <div class="mx-auto flex w-full max-w-3xl flex-col items-center">
+        <h1 class="text-center text-4xl font-bold">Obnova edukačných materiálov</h1>
+        <p class="mt-2 w-full text-center leading-6 text-gray-600 md:w-4/5">
             V dôsledku vyhorenia zborovne sa stratila vysoká kvantita edukačných materiálov. Ak by ste si našli chvíľku,
             aby ste nám pomohli s obnovou, boli by sme veľmi vďační.
         </p>
 
-        <form class="w-full" method="POST" action="{{ route('home.submit') }}">
+        <form class="mt-10 w-full" method="POST" action="{{ route('home.submit') }}">
             @csrf
 
             <div class="w-full border-b border-gray-900/10 pb-12">
-                <div class="mt-10 grid grid-cols-1 gap-y-4 md:grid-cols-6 md:gap-x-6 md:gap-y-8 ">
+                <div class="grid grid-cols-1 gap-y-4 md:grid-cols-6 md:gap-x-6 md:gap-y-8">
                     {{-- Material name --}}
                     <div class="col-span-full">
                         <label for="name" class="block text-sm font-medium text-gray-700">Meno materiálu</label>
                         <div class="mt-1">
                             <input id="name" type="text" name="name"
-                                class="shadow-sm focus:ring-smnd-blue focus:border-smnd-blue block w-full sm:text-sm border-gray-300 rounded-md"
+                                class="block w-full rounded-md border-gray-300 shadow-sm focus:border-smnd-blue focus:ring-smnd-blue sm:text-sm"
                                 placeholder="Západná Európa">
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     <div class="col-span-2">
                         <label for="teacher" class="block text-sm font-medium text-gray-700">Meno učiteľa</label>
                         <select id="teacher" name="teacher"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-smnd-blue focus:border-smnd-blue sm:text-sm rounded-md">
+                            class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-smnd-blue focus:outline-none focus:ring-smnd-blue sm:text-sm">
                             @foreach (\App\Enums\Teacher::cases() as $teacher)
                                 @if ($teacher === \App\Enums\Teacher::OTHER)
                                     <option value="{{ $teacher }}">Iné (zadajte do mena materiálu)</option>
@@ -48,7 +48,7 @@
                     <div class="col-span-2">
                         <label for="year" class="block text-sm font-medium text-gray-700">Trieda</label>
                         <select id="year" name="year"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-smnd-blue focus:border-smnd-blue sm:text-sm rounded-md">
+                            class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-smnd-blue focus:outline-none focus:ring-smnd-blue sm:text-sm">
                             @foreach (\App\Enums\Year::cases() as $year)
                                 @if ($year === \App\Enums\Year::OTHER)
                                     <option value="{{ $year }}">Iné (zadajte do mena materiálu)</option>
@@ -63,7 +63,7 @@
                     <div class="col-span-2">
                         <label for="subject" class="block text-sm font-medium text-gray-700">Predmet</label>
                         <select id="subject" name="subject"
-                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-smnd-blue focus:border-smnd-blue sm:text-sm rounded-md">
+                            class="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-smnd-blue focus:outline-none focus:ring-smnd-blue sm:text-sm">
                             @foreach (\App\Enums\Subject::cases() as $subject)
                                 @if ($subject === \App\Enums\Subject::OTHER)
                                     <option value="{{ $subject }}">Iné (zadajte do mena materiálu)</option>
@@ -76,7 +76,7 @@
 
                     {{-- File Input --}}
                     <div
-                        class="col-span-full mt-2 flex flex-col items-center rounded-lg border border-dashed py-14 border-gray-900/50">
+                        class="col-span-full mt-2 flex flex-col items-center rounded-lg border border-dashed border-gray-900/50 py-14">
                         <div class="mx-auto flex flex-col items-center text-sm leading-6 text-gray-600">
                             <label for="files"
                                 class="cursor-pointer font-semibold text-indigo-600 hover:text-indigo-500">
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="mt-3 flex flex-col-reverse md:flex-row gap-y-3 items-center justify-between">
+            <div class="mt-3 flex flex-col-reverse items-center justify-between gap-y-3 md:flex-row">
                 <p class="text-xs text-gray-600">
                     Made with ❤️ by
                     <a class="font-bold text-indigo-600" href="https://www.linkedin.com/in/vdemcak/">
@@ -101,7 +101,7 @@
                     </a>
                 </p>
                 <div class="gap-x-5">
-                    <span class="text-xs text-red-600 font-bold">
+                    <span class="text-xs font-bold text-red-600">
                         Odovzdávanie materiálov je dočasne pozastavené.
                     </span>
                     {{-- <button disabled type="submit" --}}
