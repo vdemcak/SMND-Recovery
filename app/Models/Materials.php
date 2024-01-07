@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Enums\Subject;
+use App\Enums\Teacher;
+use App\Enums\Year;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -28,5 +31,11 @@ class Materials extends Model
 
     protected $hidden = [
         'user_ip',
+    ];
+
+    protected $casts = [
+        'teacher' => Teacher::class,
+        'year' => Year::class,
+        'subject' => Subject::class
     ];
 }

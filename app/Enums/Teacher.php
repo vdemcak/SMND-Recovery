@@ -70,5 +70,5 @@ enum Teacher: string
     case VRABLOVA_LENKA = "Vráblová Lenka";
     case WILDOVA_ELENA = "Wildová Elena";
     case ZUZKOVICOVA_KATARINA = "Zuzkovičová Katarína";
-    case OTHER = "Iné (vložte do mena materiálu)";
+    case OTHER = "other";
 }
