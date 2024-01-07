@@ -21,6 +21,8 @@ class AuthController extends Controller
     {
         $azureUser = Socialite::driver('azure')->user();
 
+        $idToken = json_decode(base64_decode(explode('.', $azureUser->accessTokenResponseBody['id_token'])[1]));
+
         $client = new GuzzleClient();
         $photoResponse = $client->request('GET', 'https://graph.microsoft.com/v1.0/users/' . $azureUser->email . '/photo/$value', [
             'headers' => [
@@ -35,7 +37,7 @@ class AuthController extends Controller
                 'name' => $azureUser->name,
                 'email' => $azureUser->email,
                 'photo' => 'data:image/png;base64,' . base64_encode($photoResponse->getBody()->getContents()),
-                'isTeacher' => false, // TODO: Check if user is teacher
+                'isTeacher' => in_array(env('TEACHER_ROLE'), $idToken->groups)
             ]
         );
 
