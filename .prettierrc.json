@@ -1,4 +1,5 @@
 {
+    "sortTailwindcssClasses": true,
     "plugins": [
         "@shufo/prettier-plugin-blade"
     ],
