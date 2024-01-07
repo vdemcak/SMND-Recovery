@@ -8,27 +8,23 @@ use Livewire\Component;
 
 class MaterialSearch extends Component
 {
-    public $page = 1;
-
-
-    public $search = '';
-
     public $results = [];
 
-    public function increment()
-    {
-        $this->page++;
-    }
-
-    public function decrement()
-    {
-        $this->page--;
-    }
+    public $name = '';
+    public $teacher = '';
+    public $subject = '';
+    public $year = '';
 
     public function download(string $path)
     {
+        $user = auth()->user();
+
+        if (!$user || !$user->isTeacher) {
+            abort(403, "Nemáte právo na sťahovanie materiálov.");
+        }
+
         if (!Storage::disk('materials')->exists($path)) {
-            return abort(404);
+            abort(404, "Tento súbor bohužiaľ nebol plne nahratý na server.");
         }
 
         return Storage::disk('materials')->download($path);
@@ -36,7 +32,18 @@ class MaterialSearch extends Component
 
     public function render()
     {
-        $this->results = Materials::orderBy('id', 'desc')->paginate(10, ['*'], 'page', $this->page)->items();
+        $user = auth()->user();
+
+        if (!$user || !$user->isTeacher) {
+            abort(403, "Nemáte právo na zobrazenie materiálov.");
+        }
+
+        $this->results = Materials::where('name', 'like', '%' . $this->name . '%')
+            ->where('teacher', 'like', '%' . $this->teacher . '%')
+            ->where('subject', 'like', '%' . $this->subject . '%')
+            ->where('year', 'like', '%' . $this->year . '%')
+            ->orderBy('id', 'desc')
+            ->get();
 
         return view('livewire.material-search');
     }

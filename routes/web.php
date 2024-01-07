@@ -26,7 +26,7 @@ Route::get('/portal', function () {
         'material_count' => Materials::count(),
         'file_count' => DB::table('materials')->selectRaw("SUM(cardinality(string_to_array(files, ','))) as total_sum")->value('total_sum')
     ]);
-})->name('portal');
+})->middleware('auth')->name('portal');
 
 
 Route::get('/', function () {
