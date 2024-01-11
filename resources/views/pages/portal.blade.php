@@ -15,6 +15,6 @@
             a súbory, ktoré boli k ním priložené.
         </p>
 
-        @livewire('material-search')
+        <livewire:material-search />
     </div>
 @stop
