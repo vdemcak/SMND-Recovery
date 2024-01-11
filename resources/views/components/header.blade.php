@@ -5,7 +5,7 @@
     </a>
     @auth
         <div class="flex gap-x-5">
-            @if (auth()->user()->isTeacher && !request()->routeIs('portal'))
+            @if (auth()->user()->is_teacher && !request()->routeIs('portal'))
                 <a href="{{ route('portal') }}"
                     class="rounded-full border-2 border-smnd-blue px-4 py-2 text-sm font-bold text-smnd-blue">
                     Prejsť do portálu

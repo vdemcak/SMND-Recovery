@@ -10,6 +10,7 @@ use Usernotnull\Toast\Concerns\WireToast;
 class MaterialSearch extends Component
 {
     use WireToast;
+
     public $results = [];
 
     public $name = '';
@@ -21,7 +22,7 @@ class MaterialSearch extends Component
     {
         $user = auth()->user();
 
-        if (!$user || !$user->isTeacher) {
+        if (!$user || !$user->is_teacher) {
             toast()->danger('Nemáte právo na sťahovanie materiálov.')->push();
             return;
         }
@@ -38,7 +39,7 @@ class MaterialSearch extends Component
     {
         $user = auth()->user();
 
-        if (!$user || !$user->isTeacher) {
+        if (!$user || !$user->is_teacher) {
             abort(403, "Nemáte právo na zobrazenie materiálov.");
         }
 

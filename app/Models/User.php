@@ -34,7 +34,7 @@ class User extends Authenticatable
         'name',
         'email',
         'photo',
-        'isTeacher',
+        'is_teacher',
     ];
 
     /**
