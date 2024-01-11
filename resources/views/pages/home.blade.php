@@ -78,8 +78,7 @@
                     <div
                         class="col-span-full mt-2 flex flex-col items-center rounded-lg border border-dashed border-gray-900/50 py-14">
                         <div class="mx-auto flex flex-col items-center text-sm leading-6 text-gray-600">
-                            <label for="files"
-                                class="cursor-pointer font-semibold text-indigo-600 hover:text-indigo-500">
+                            <label for="files" class="cursor-pointer font-semibold text-smnd-blue hover:text-indigo-500">
                                 <span>Vyberte súbory</span>
                                 <input class="hidden" id="files" type="file" multiple />
                             </label>
@@ -92,7 +91,7 @@
             <div class="mt-3 flex flex-col-reverse items-center justify-between gap-y-3 md:flex-row">
                 <p class="text-xs text-gray-600">
                     Made with ❤️ by
-                    <a class="font-bold text-indigo-600" href="https://www.linkedin.com/in/vdemcak/">
+                    <a class="font-bold text-smnd-blue" href="https://www.linkedin.com/in/vdemcak/">
                         Viktor Demčák
                     </a>
                     -
@@ -105,7 +104,7 @@
                         Odovzdávanie materiálov je dočasne pozastavené.
                     </span>
                     {{-- <button disabled type="submit" --}}
-                    {{--    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:opacity-40"> --}}
+                    {{--    class="rounded-md bg-smnd-blue px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:opacity-40"> --}}
                     {{--    Odoslať --}}
                     {{-- </button> --}}
                 </div>
