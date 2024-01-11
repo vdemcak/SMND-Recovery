@@ -5,9 +5,11 @@ namespace App\Livewire;
 use App\Models\Materials;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Usernotnull\Toast\Concerns\WireToast;
 
 class MaterialSearch extends Component
 {
+    use WireToast;
     public $results = [];
 
     public $name = '';
@@ -20,11 +22,13 @@ class MaterialSearch extends Component
         $user = auth()->user();
 
         if (!$user || !$user->isTeacher) {
-            abort(403, "Nemáte právo na sťahovanie materiálov.");
+            toast()->danger('Nemáte právo na sťahovanie materiálov.')->push();
+            return;
         }
 
         if (!Storage::disk('materials')->exists($path)) {
-            abort(404, "Tento súbor bohužiaľ nebol plne nahratý na server.");
+            toast()->danger('Tento súbor bohužiaľ nebol plne nahratý na server. Tento incident bol nahlásený administrátorovi.')->push();
+            return;
         }
 
         return Storage::disk('materials')->download($path);
