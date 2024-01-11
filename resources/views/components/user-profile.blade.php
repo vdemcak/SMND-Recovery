@@ -33,9 +33,11 @@
             <li>
                 <a href="{{ route('home') }}" class="block px-4 py-2 hover:bg-gray-100">Domov</a>
             </li>
-            <li>
-                <a href="{{ route('portal') }}" class="block px-4 py-2 hover:bg-gray-100">Portál</a>
-            </li>
+            @if (auth()->user()->is_teacher)
+                <li>
+                    <a href="{{ route('portal') }}" class="block px-4 py-2 hover:bg-gray-100">Portál</a>
+                </li>
+            @endif
         </ul>
         <div class="py-1">
 
