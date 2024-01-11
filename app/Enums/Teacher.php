@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Enums;
+
+enum Teacher: string
+{
+    case BABKA_TICIAN = "Babka Ticián";
+    case BARTOSOVA_ZUZANA = "Bartošová Zuzana";
+    case BAUR_JAMES_ANDREW = "Baur James Andrew";
+    case BELAN_ANTON = "Belan Anton";
+    case BESEDOVA_ZEGORJAKOVA_JANA = "Besedová Žegorjaková Jana";
+    case BUJNAK_MILAN = "Bujňák Milan";
+    case BUJTAROVA_BEATA = "Bujtárová Beáta";
+    case CHUDIK_ROMAN = "Chudík Roman";
+    case CHUDIKOVA_IVETA = "Chudíková Iveta";
+    case CIMRA_JOZEF_DODDY = "Cimra Jozef Doddy";
+    case CIMROVA_MARTINA = "Cimrová Martina";
+    case DZAMA_DAVID = "Dzama Dávid";
+    case GANCARCIKOVA_ZLATICA = "Gancarčíková Zlatica";
+    case GOCAROVA_KATARINA = "Gočárová Katarína";
+    case GREJTAKOVA_MONIKA = "Grejtáková Monika";
+    case HASALIKOVA_ZUZANA = "Hasalíková Zuzana";
+    case HABLAKOVA_MARTINA = "Habľáková Martina";
+    case HLADKA_LUDMILA = "Hladká Ľudmila";
+    case HLINKOVA_DANICA = "Hlinková Danica";
+    case HUSAROVICOVA_IVETA = "Husarovičová Iveta";
+    case IVANEKOVA_IVONA = "Iváneková Ivona";
+    case JANACKOVA_MARIANNA = "Janáčková Marianna";
+    case JANICOVA_MONIKA = "Janičová Monika";
+    case JANKOVICOVA_LENKA = "Jankovičová Lenka";
+    case JANOSKOVA_VIERA = "Jánošková Viera";
+    case JURIK_ANDREJ = "Jurík Andrej";
+    case KARASZOVA_VIKTORIA = "Kárászová Viktória";
+    case KARSNAKOVA_KATARINA = "Karšňáková Katarína";
+    case KAZIMIROVA_ANNA = "Kažimírová Anna";
+    case KELBELOVA_LENKA = "Kelbelová Lenka";
+    case KNEISZOVA_EMILIA = "Kneiszová Emília";
+    case KOLIBAROVA_MARTA = "Kolibárová Marta";
+    case KOSTOLANSKA_VERONIKA = "Kostolanská Veronika";
+    case KOSOVA_SIMONA = "Košová Simona";
+    case KOVAC_MARTIN = "Kováč Martin";
+    case KOVACOVA_IVONA = "Kováčová Ivona";
+    case KOVACOVA_SILVIA = "Kováčová Silvia";
+    case KRCHNAVY_JAKUB = "Krchňavý Jakub";
+    case KUCEROVA_KATARINA = "Kučerová Katarína";
+    case LAZNIBATOOVA_JOLANA = "Laznibatová Jolana";
+    case MARCINKOVA_DENISA = "Marcinková Denisa";
+    case MARIASOVA_MAGDALENA = "Mariašová Magdaléna";
+    case MASARYKOVA_KATARINA = "Masaryková Katarína";
+    case MATEJOV_RADOSLAV = "Matejov Radoslav";
+    case MEDRICKY_MICHAL = "Medrický Michal";
+    case MELICHERCIKOVA_MARIA = "Melicherčíková Mária";
+    case MURINOVA_JANA = "Murínová Jana";
+    case ONDRIASOVA_DOMINIKA = "Ondriašová Dominika";
+    case PAJTIKOVA_KATARINA = "Pajtíková Katarína";
+    case PINDUROVA_ANDREA = "Pindurová Andrea";
+    case POLJOVKA_JURAJ = "Poljovka Juraj";
+    case PUPIKOVA_KATARINA = "Pupíková Katarína";
+    case RACEVOVA_JELA = "Račevová Jela";
+    case RALBOVSKY_JOZEF = "Ralbovský Jozef";
+    case ROHALOVA_ANDREA = "Rohaľová Andrea";
+    case SEDMAKOVA_RENATA = "Sedmákova Renáta";
+    case SLEZAKOVA_NINA = "Slezáková Nina";
+    case STANO_MARIAN = "Staňo Marián";
+    case SIKULINCOVA_LENKA = "Šikulíncová Lenka";
+    case SRAMOVA_KATARINA = "Šramová Katarína";
+    case TOMKOVA_MARTINA = "Tomková Martina";
+    case VALENTOVA_MARIA = "Valentová Mária";
+    case VASICOVA_LENKA = "Vašicová Lenka";
+    case VRABLOVA_LENKA = "Vráblová Lenka";
+    case WILDOVA_ELENA = "Wildová Elena";
+    case ZUZKOVICOVA_KATARINA = "Zuzkovičová Katarína";
+    case OTHER = "other";
+}
