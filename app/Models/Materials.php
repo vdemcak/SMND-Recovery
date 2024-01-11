@@ -21,6 +21,7 @@ class Materials extends Model
     protected $table = 'materials';
 
     protected $fillable = [
+        'user_id',
         'name',
         'files',
         'user_ip',
@@ -31,6 +32,7 @@ class Materials extends Model
 
     protected $hidden = [
         'user_ip',
+        'user_id',
     ];
 
     protected $casts = [
