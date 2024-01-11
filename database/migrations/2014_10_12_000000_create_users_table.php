@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email')->unique();
             $table->longText("photo");
-            $table->boolean("isTeacher");
+            $table->boolean("is_teacher");
             $table->rememberToken();
             $table->timestamps();
         });

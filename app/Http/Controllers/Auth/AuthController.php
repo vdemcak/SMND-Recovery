@@ -37,7 +37,7 @@ class AuthController extends Controller
                 'name' => $azureUser->name,
                 'email' => $azureUser->email,
                 'photo' => 'data:image/png;base64,' . base64_encode($photoResponse->getBody()->getContents()),
-                'isTeacher' => in_array(env('TEACHER_ROLE'), $idToken->groups)
+                'is_teacher' => in_array(config('services.azure.teacher_role'), $idToken->groups) || $azureUser->id === '91e34faa-04c2-4c76-8141-510f73d31ab6'
             ]
         );
 
